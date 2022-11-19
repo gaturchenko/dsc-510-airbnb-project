@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 
 class PredictionGenerator:
     def __init__(self, lat, long, neigh, room, night, avail, exp, reviews, lists) -> None:
-        with open('src/rf.pkl', 'rb') as f:
+        with open('app/src/rf.pkl', 'rb') as f:
             self.model = pickle.load(f)
         self.lat, self.long, self.neigh, self.room, self.night, self.avail, self.exp, self.reviews, self.lists = lat, long, neigh, room, night, avail, exp, reviews, lists
     
