@@ -36,8 +36,8 @@ with st.form('input'):
 
     input_submit = st.form_submit_button('Get a price estimate!')
 
-    if input_submit:
-        pg = PredictionGenerator(latitude, longitude, neighborhood, room_type_col, min_nights, availability, experience, reviews, listings)
-        pg.prepare_input()
-        prediction = pg.get_prediction()
-        st.metric('Estimated price per night!', round(prediction[0], 2))
+if input_submit:
+    pg = PredictionGenerator(latitude, longitude, neighborhood, room_type_col, min_nights, availability, experience, reviews, listings)
+    pg.prepare_input()
+    prediction = pg.get_prediction()
+    st.metric('Estimated price per night!', round(prediction[0], 2))
